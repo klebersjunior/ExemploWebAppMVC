@@ -7,5 +7,7 @@
         public string Color { get; set; }
         public string LicensePlate {  get; set; }
         public int Year { get; set; }
+        public int BrandId { get; set; }
+        public BrandModel Brand { get; set; }
     }
 }
