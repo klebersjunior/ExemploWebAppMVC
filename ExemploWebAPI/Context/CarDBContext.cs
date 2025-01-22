@@ -12,21 +12,22 @@ namespace ExemploWebAPI.Context
         {
         }
 
-        public CarDBContext(string connectionString) : base()
-        {
-            _connectionString = connectionString;
+        //public CarDBContext(string connectionString) : base()
+        //{
+        //    _connectionString = connectionString;
 
-        }
+        //}
 
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
 
-            optionsBuilder.UseMySQL(_connectionString);
+        //    optionsBuilder.UseMySQL(_connectionString);
 
-        }
+        //}
 
 
         public DbSet<CarModel> Cars { get; set; }
+        public DbSet<BrandModel> Brand { get; set; }
     }
 }

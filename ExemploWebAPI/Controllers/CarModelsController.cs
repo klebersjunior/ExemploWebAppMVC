@@ -25,14 +25,14 @@ namespace ExemploWebAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CarModel>>> GetCars()
         {
-            return await _context.Cars.ToListAsync();
+            return await _context.Cars.Include(c => c.Brand).ToListAsync();
         }
 
         // GET: api/CarModels/5
         [HttpGet("{id}")]
         public async Task<ActionResult<CarModel>> GetCarModel(int id)
         {
-            var carModel = await _context.Cars.FindAsync(id);
+            var carModel = await _context.Cars.Include(c => c.Brand).FirstOrDefaultAsync(c => c.Id == id);
 
             if (carModel == null)
             {
